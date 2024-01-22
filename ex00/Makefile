@@ -1,6 +1,6 @@
 NAME := megaphone
 
-CC := gcc -g
+CC := c++
 
 CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98
 
