@@ -39,6 +39,66 @@ static void display_contact(Contact contact, int index){
 	std::cout << "|\n";
 }
 
+static void	single_contact(Contact contact)
+{
+	int num = -1;
+	std::cout << "    First Name|";
+	if (contact.first_name.length() > 10) {
+		std::cout << contact.first_name.substr(0, 9);
+		std::cout << ".";
+	}
+	else{
+		while (++num < 10 - (int)contact.first_name.length())
+			std::cout << " ";
+		std::cout << contact.first_name;
+	}
+	std::cout << "|\n     Last Name|";
+	num = -1;
+	if (contact.last_name.length() > 10) {
+		std::cout << contact.last_name.substr(0, 9);
+		std::cout << ".";
+	}
+	else{
+		while (++num < 10 - (int)contact.last_name.length())
+			std::cout << " ";
+		std::cout << contact.last_name;
+	}
+	std::cout << "|\n      Nickname|";
+	num = -1;
+	if (contact.nickname.length() > 10) {
+		std::cout << contact.nickname.substr(0, 9);
+		std::cout << ".";
+	}
+	else{
+		while (++num < 10 - (int)contact.nickname.length())
+			std::cout << " ";
+		std::cout << contact.nickname;
+	}
+	std::cout << "|\n  Phone Number|";
+	num = -1;
+	if (contact.phone_number.length() > 10) {
+		std::cout << contact.phone_number.substr(0, 9);
+		std::cout << ".";
+	}
+	else{
+		while (++num < 10 - (int)contact.phone_number.length())
+			std::cout << " ";
+		std::cout << contact.phone_number;
+	}
+	std::cout << "|\nDarkest Secret|";
+	num = -1;
+	if (contact.secret.length() > 10) {
+		std::cout << contact.secret.substr(0, 9);
+		std::cout << ".";
+	}
+	else{
+		while (++num < 10 - (int)contact.secret.length())
+			std::cout << " ";
+		std::cout << contact.secret;
+	}
+	std::cout << "|\n";
+}
+
 
 static void	show_contacts(PhoneBook phonebook){
 	std::string input;
@@ -48,6 +108,8 @@ static void	show_contacts(PhoneBook phonebook){
 		display_contact(phonebook.contacts[number], number);
 		number++;
 	}
+	std::getline (std::cin, input);
+	single_contact(phonebook.contacts[(int) std::stoi(input)]);
 }
 
 int main(void) {
