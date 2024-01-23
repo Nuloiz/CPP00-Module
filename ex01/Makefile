@@ -2,9 +2,10 @@ NAME := phonebook
 
 CC := c++
 
-CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98
+#CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98
+CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98 -fsanitize=address
 
-SRC := phonebook.cpp
+SRC := main.cpp
 
 
 INCLUDES := -I header.hpp
