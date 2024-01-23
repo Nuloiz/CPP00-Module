@@ -53,18 +53,15 @@ static void	show_contacts(PhoneBook phonebook){
 int main(void) {
 	PhoneBook phonebook;
 	std::string command;
-	phonebook.number = 8;
-	std::getline (std::cin, phonebook.contacts[0].first_name);
-	std::getline (std::cin, phonebook.contacts[0].last_name);
-	std::getline (std::cin, phonebook.contacts[0].nickname);
+	phonebook.number = 0;
 	while (1)
 	{
 		std::getline (std::cin,command);
-		if (std::strcmp(command.c_str(), "EXIT") == 0)
+		if (command == "EXIT")
 			return (0);
-		//else if (std::strcmp(command.c_str(), "ADD") == 0)
-			//add_contact(&phonebook);
-		else if (std::strcmp(command.c_str(), "SEARCH") == 0)
+		else if (command == "ADD")
+			add_contact(&phonebook);
+		else if (command == "SEARCH")
 			show_contacts(phonebook);
 	}
 };

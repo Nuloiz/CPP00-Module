@@ -19,6 +19,7 @@ class PhoneBook{
 		Contact	contacts[8];
 };
 
-int	main(void);
+int		main(void);
+void	add_contact(PhoneBook *phonebook);
 
 #endif
