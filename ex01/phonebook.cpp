@@ -2,10 +2,10 @@
 
 static void	move_contacts(int num, PhoneBook *phonebook){
 	phonebook->contacts[num].first_name = phonebook->contacts[num + 1].first_name;
-	phonebook->contacts[num].first_name = phonebook->contacts[num + 1].last_name;
-	phonebook->contacts[num].first_name = phonebook->contacts[num + 1].nickname;
-	phonebook->contacts[num].first_name = phonebook->contacts[num + 1].phone_number;
-	phonebook->contacts[num].first_name = phonebook->contacts[num + 1].secret;
+	phonebook->contacts[num].last_name = phonebook->contacts[num + 1].last_name;
+	phonebook->contacts[num].nickname = phonebook->contacts[num + 1].nickname;
+	phonebook->contacts[num].phone_number = phonebook->contacts[num + 1].phone_number;
+	phonebook->contacts[num].secret = phonebook->contacts[num + 1].secret;
 }
 
 void	add_contact(PhoneBook *phonebook){
