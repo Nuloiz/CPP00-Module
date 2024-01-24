@@ -39,6 +39,10 @@ void	add_contact(PhoneBook *phonebook){
 	std::cout << "Phone-Number:";
 	std::getline (std::cin, phonebook->contacts[phonebook->number].phone_number);
 	num = -1;
+	if (!phonebook->contacts[phonebook->number].phone_number[0]) {
+		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
+		return;
+	}
 	while (phonebook->contacts[phonebook->number].phone_number[++num]){
 		if (!isdigit(phonebook->contacts[phonebook->number].phone_number[num])){
 			std::cout << "Error Fail, Phone Number hast to be only digits. Returned to Menu\n";
