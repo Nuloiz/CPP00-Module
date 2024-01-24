@@ -5,10 +5,9 @@ CC := c++
 #CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98
 CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98 -fsanitize=address
 
-SRC :=
+SRC := Account.cpp tests.cpp
 
-
-INCLUDES := -I header.hpp
+INCLUDES := -I Account.hpp
 
 OBJ := $(SRC:%.cpp=$(OBJ)%.o)
 
