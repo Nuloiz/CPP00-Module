@@ -109,7 +109,11 @@ static void	show_contacts(PhoneBook phonebook){
 		number++;
 	}
 	std::getline (std::cin, input);
-	single_contact(phonebook.contacts[(int) std::stoi(input)]);
+	if (std::stoi(input) > phonebook.number){
+		std::cout << "Not in the list\n";
+		return ;
+	}
+	single_contact(phonebook.contacts[(int) std::stoi(input) - 1]);
 }
 
 int main(void) {
