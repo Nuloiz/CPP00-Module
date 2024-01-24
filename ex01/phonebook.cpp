@@ -24,17 +24,38 @@ void	add_contact(PhoneBook *phonebook){
 		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
 	}
+	num = -1;
+	while (phonebook->contacts[phonebook->number].first_name[++num]){
+		if (!isalpha(phonebook->contacts[phonebook->number].first_name[num])){
+			std::cout << "Error Fail, First Name hast to be only letters. Returned to Menu\n";
+			return ;
+		}
+	}
 	std::cout << "Last Name:";
 	std::getline (std::cin, phonebook->contacts[phonebook->number].last_name);
 	if (!phonebook->contacts[phonebook->number].last_name[0]){
 		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
 	}
+	num = -1;
+	while (phonebook->contacts[phonebook->number].last_name[++num]){
+		if (!isalpha(phonebook->contacts[phonebook->number].last_name[num])){
+			std::cout << "Error Fail, Last Name hast to be only letters. Returned to Menu\n";
+			return ;
+		}
+	}
 	std::cout << "Nickname:";
 	std::getline (std::cin, phonebook->contacts[phonebook->number].nickname);
 	if (!phonebook->contacts[phonebook->number].nickname[0]){
 		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
+	}
+	num = -1;
+	while (phonebook->contacts[phonebook->number].nickname[++num]){
+		if (!isascii(phonebook->contacts[phonebook->number].nickname[num])){
+			std::cout << "Error Fail, Nickname hast to be only ascii characters. Returned to Menu\n";
+			return ;
+		}
 	}
 	std::cout << "Phone-Number:";
 	std::getline (std::cin, phonebook->contacts[phonebook->number].phone_number);
@@ -49,11 +70,24 @@ void	add_contact(PhoneBook *phonebook){
 			return ;
 		}
 	}
+	while (phonebook->contacts[phonebook->number].phone_number[++num]){
+		if (!isdigit(phonebook->contacts[phonebook->number].phone_number[num])){
+			std::cout << "Error Fail, Phone Number hast to be only digits. Returned to Menu\n";
+			return ;
+		}
+	}
 	std::cout << "Darkest Secret:";
 	std::getline (std::cin, phonebook->contacts[phonebook->number].secret);
 	if (!phonebook->contacts[phonebook->number].secret[0]){
 		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
+	}
+	num = -1;
+	while (phonebook->contacts[phonebook->number].secret[++num]){
+		if (!isascii(phonebook->contacts[phonebook->number].secret[num])){
+			std::cout << "Error Fail, darkest secret hast to be only ascii characters. Returned to Menu\n";
+			return ;
+		}
 	}
 	(phonebook->number)++;
 }
