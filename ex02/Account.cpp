@@ -1,6 +1,13 @@
-
+#include <ctime>
 #include <iostream>
 #include "Account.hpp"
+
+void	Account::_displayTimestamp( void ){
+    std::time_t t = std::time(0);
+    std::tm* now = std::localtime(&t);
+    std::cout << "[" << (now->tm_year + 1900) << (now->tm_mon + 1) << now->tm_mday << "_" \
+                << now->tm_hour << now->tm_min << now->tm_sec << " ";
+}
 
 void	Account::makeDeposit( int deposit ){
 	_displayTimestamp();
@@ -66,4 +73,21 @@ void	Account::displayStatus( void ) const{
     std::cout << _nbDeposits;
     std::cout << ";withdrawals:\n";
     std::cout << _nbWithdrawals;
+}
+
+Account::Account(){
+    _accountIndex = 0;
+    _nbAccounts = 0;
+    _totalAmount = 0;
+    _totalNbDeposits = 0;
+    _totalNbWithdrawals = 0;
+}
+
+Account::Account(int initial_deposit){
+    Account();
+    _accountIndex++;
+    _nbAccounts++;
+    _amount = initial_deposit;
+    _nbDeposits = 0;
+    _nbWithdrawals = 0;
 }
