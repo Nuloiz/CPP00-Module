@@ -116,7 +116,7 @@ static void	show_contacts(PhoneBook phonebook){
 			return ;
 		}
 	}
-	if (std::stoi(input) > phonebook.number || std::stoi(input) <= 0){
+	if (!input[0] || std::stoi(input) > phonebook.number || std::stoi(input) <= 0){
 		std::cout << "Not in the list\n";
 		return ;
 	}

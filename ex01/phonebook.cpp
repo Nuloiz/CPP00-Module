@@ -81,9 +81,9 @@ void	add_contact(PhoneBook *phonebook){
 			return ;
 		}
 	}
-	if (phonebook->number == 3){
+	if (phonebook->number == 8){
 		num = 0;
-		while (num < 2){
+		while (num < 7){
 			move_contacts(num, phonebook);
 			num++;
 		}
