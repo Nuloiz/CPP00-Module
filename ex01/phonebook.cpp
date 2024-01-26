@@ -8,6 +8,13 @@ static void	move_contacts(int num, PhoneBook *phonebook){
 	phonebook->contacts[num].secret = phonebook->contacts[num + 1].secret;
 }
 
+/*void Contact::set_values(Phonebook *phonebook, char *fn, char *ln, char *nn, char *pn, char *ds) {
+	phonebook->contacts[phonebook->number].first_name = fn;
+	phonebook->contacts[phonebook->number].last_name = ln;
+	phonebook->contacts[phonebook->number].nickname = nn;
+	phonebook->contacts[phonebook->number].phone_number = pn;
+	phonebook->contacts[phonebook->number].secret = ds;*/
+
 void	add_contact(PhoneBook *phonebook){
 	int num = -1;
 	std::string	fn;
@@ -94,5 +101,6 @@ void	add_contact(PhoneBook *phonebook){
 	phonebook->contacts[phonebook->number].nickname = nn;
 	phonebook->contacts[phonebook->number].phone_number = pn;
 	phonebook->contacts[phonebook->number].secret = ds;
+	//Contact::set_values(phonebook, fn, ln, nn, pn, ds);
 	(phonebook->number)++;
 }
