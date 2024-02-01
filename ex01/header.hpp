@@ -7,7 +7,8 @@
 class Contact{
 	public:
 
-	//static void set_values(Phonebook *phonebook, char *fn, char *ln, char *nn, char *pn, char *ds);
+	//static void set_values(Contact *contacts, char *fn, char *ln, char *nn, char *pn, char *ds);
+	//void set_values(char *fn, char *ln, char *nn, char *pn, char *ds);
 
 	//private:
 		std::string	first_name;

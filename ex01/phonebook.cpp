@@ -8,12 +8,19 @@ static void	move_contacts(int num, PhoneBook *phonebook){
 	phonebook->contacts[num].secret = phonebook->contacts[num + 1].secret;
 }
 
-/*void Contact::set_values(Phonebook *phonebook, char *fn, char *ln, char *nn, char *pn, char *ds) {
-	phonebook->contacts[phonebook->number].first_name = fn;
-	phonebook->contacts[phonebook->number].last_name = ln;
-	phonebook->contacts[phonebook->number].nickname = nn;
-	phonebook->contacts[phonebook->number].phone_number = pn;
-	phonebook->contacts[phonebook->number].secret = ds;*/
+/*void Contact::set_values(Contact *contacts, char *fn, char *ln, char *nn, char *pn, char *ds) {
+	contacts->first_name = fn;
+	contacts->last_name = ln;
+	contacts->nickname = nn;
+	contacts->phone_number = pn;
+	contacts->secret = ds;*/
+
+/*void Contact::set_values(char *fn, char *ln, char *nn, char *pn, char *ds) {
+	first_name = fn;
+	last_name = ln;
+	nickname = nn;
+	phone_number = pn;
+	secret = ds;*/
 
 void	add_contact(PhoneBook *phonebook){
 	int num = -1;
@@ -24,7 +31,6 @@ void	add_contact(PhoneBook *phonebook){
 	std::string	ds;
 	std::string input;
 
-	std::cout << "First Name:";
 	std::getline (std::cin, fn);
 	if (!fn[0]){
 		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
@@ -101,6 +107,7 @@ void	add_contact(PhoneBook *phonebook){
 	phonebook->contacts[phonebook->number].nickname = nn;
 	phonebook->contacts[phonebook->number].phone_number = pn;
 	phonebook->contacts[phonebook->number].secret = ds;
-	//Contact::set_values(phonebook, fn, ln, nn, pn, ds);
+	//phonebook->contacts[phonebook->number]->set_values(fn, ln, nn, pn, ds);
+	//Contact::set_values(&(phonebook->contacts[phonebook->number]), fn, ln, nn, pn, ds);
 	(phonebook->number)++;
 }

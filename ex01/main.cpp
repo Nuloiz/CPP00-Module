@@ -129,9 +129,13 @@ int main(void) {
 	phonebook.number = 0;
 	while (1)
 	{
+		std::cout << "MENU:\n";
 		std::getline (std::cin,command);
 		if (command == "EXIT")
+		{
+			std::cout << "Exiting the program\n";
 			return (0);
+		}
 		else if (command == "ADD")
 			add_contact(&phonebook);
 		else if (command == "SEARCH")
