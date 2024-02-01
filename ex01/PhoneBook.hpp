@@ -7,7 +7,13 @@
 
 class PhoneBook{
 public:
+
+	PhoneBook();
+
+	~PhoneBook();
+
 	int		number;
+private:
 	Contact	contacts[8];
 };
 

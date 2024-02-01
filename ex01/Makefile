@@ -5,10 +5,10 @@ CC := c++
 #CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98
 CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98 -fsanitize=address
 
-SRC := main.cpp phonebook.cpp
+SRC := main.cpp book.cpp Contact.cpp PhoneBook.hpp
 
 
-INCLUDES := -I header.hpp
+INCLUDES := -I header.hpp PhoneBook.hpp Contact.hpp
 
 OBJ := $(SRC:%.cpp=$(OBJ)%.o)
 

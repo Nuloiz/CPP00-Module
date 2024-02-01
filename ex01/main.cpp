@@ -50,11 +50,11 @@ static void	single_contact(Contact contact)
 	else{
 		while (++num < 10 - (int)contact.first_name.length())
 			std::cout << " ";
-		std::cout << contact.first_name;
+		std::cout << Contact::get_fn();
 	}
 	std::cout << "|\n     Last Name|";
 	num = -1;
-	if (contact.last_name.length() > 10) {
+	if (get_ln().length() > 10) {
 		std::cout << contact.last_name.substr(0, 9);
 		std::cout << ".";
 	}
