@@ -8,20 +8,6 @@ static void	move_contacts(int num, PhoneBook *phonebook){
 	phonebook->contacts[num].secret = phonebook->contacts[num + 1].secret;
 }
 
-/*void Contact::set_values(Contact *contacts, char *fn, char *ln, char *nn, char *pn, char *ds) {
-	contacts->first_name = fn;
-	contacts->last_name = ln;
-	contacts->nickname = nn;
-	contacts->phone_number = pn;
-	contacts->secret = ds;*/
-
-/*void Contact::set_values(char *fn, char *ln, char *nn, char *pn, char *ds) {
-	first_name = fn;
-	last_name = ln;
-	nickname = nn;
-	phone_number = pn;
-	secret = ds;*/
-
 void	add_contact(PhoneBook *phonebook){
 	int num = -1;
 	std::string	fn;
