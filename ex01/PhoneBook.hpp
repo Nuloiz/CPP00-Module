@@ -10,3 +10,5 @@ public:
 	int		number;
 	Contact	contacts[8];
 };
+
+#endif
