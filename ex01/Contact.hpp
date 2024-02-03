@@ -1,6 +1,4 @@
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
-
+#pragma once
 #include "header.hpp"
 
 class Contact{
@@ -26,6 +24,3 @@ class Contact{
 	std::string get_pn() const;
 	std::string get_ds() const;
 };
-
-
-#endif
