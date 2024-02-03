@@ -1,12 +1,5 @@
 #include "Contact.hpp"
 
-/*void Contact::set_values(Contact *contacts, char *fn, char *ln, char *nn, char *pn, char *ds) {
-	contacts->first_name = fn;
-	contacts->last_name = ln;
-	contacts->nickname = nn;
-	contacts->phone_number = pn;
-	contacts->secret = ds;*/
-
 Contact::Contact (){
 	return;
 }

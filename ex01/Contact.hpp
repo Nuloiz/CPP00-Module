@@ -16,7 +16,6 @@ class Contact{
 
 	Contact();
 
-	//static void set_values(Contact *contacts, char *fn, char *ln, char *nn, char *pn, char *ds);
 	void set_values(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds);
 
 	~Contact();
