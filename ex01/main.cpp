@@ -5,36 +5,36 @@ static void display_contact(Contact contact, int index){
 	std::cout << "|        ";
 	std::cout << index + 1;
 	std::cout << "|";
-	if (contact.first_name.length() > 10) {
-		std::cout << contact.first_name.substr(0, 9);
+	if (contact.Contact::get_fn().length() > 10) {
+		std::cout << contact.Contact::get_fn().substr(0, 9);
 		std::cout << ".";
 	}
 	else{
-		while (++num < 10 - (int)contact.first_name.length())
+		while (++num < 10 - (int)contact.Contact::get_fn().length())
 			std::cout << " ";
-		std::cout << contact.first_name;
+		std::cout << contact.Contact::get_fn();
 	}
 	std::cout << "|";
 	num = -1;
-	if (contact.last_name.length() > 10) {
-		std::cout << contact.last_name.substr(0, 9);
+	if (contact.Contact::get_ln().length() > 10) {
+		std::cout << contact.Contact::get_ln().substr(0, 9);
 		std::cout << ".";
 	}
 	else{
-		while (++num < 10 - (int)contact.last_name.length())
+		while (++num < 10 - (int)contact.Contact::get_ln().length())
 			std::cout << " ";
-		std::cout << contact.last_name;
+		std::cout << contact.Contact::get_ln();
 	}
 	std::cout << "|";
 	num = -1;
-	if (contact.nickname.length() > 10) {
-		std::cout << contact.nickname.substr(0, 9);
+	if (contact.Contact::get_nn().length() > 10) {
+		std::cout << contact.Contact::get_nn().substr(0, 9);
 		std::cout << ".";
 	}
 	else{
-		while (++num < 10 - (int)contact.nickname.length())
+		while (++num < 10 - (int)contact.Contact::get_nn().length())
 			std::cout << " ";
-		std::cout << contact.nickname;
+		std::cout << contact.Contact::get_nn();
 	}
 	std::cout << "|\n";
 }
@@ -43,58 +43,58 @@ static void	single_contact(Contact contact)
 {
 	int num = -1;
 	std::cout << "    First Name|";
-	if (contact.first_name.length() > 10) {
-		std::cout << contact.first_name.substr(0, 9);
+	if (contact.Contact::get_fn().length() > 10) {
+		std::cout << contact.Contact::get_fn().substr(0, 9);
 		std::cout << ".";
 	}
 	else{
-		while (++num < 10 - (int)contact.first_name.length())
+		while (++num < 10 - (int)contact.Contact::get_fn().length())
 			std::cout << " ";
-		std::cout << Contact::get_fn();
+		std::cout << contact.Contact::get_fn();
 	}
 	std::cout << "|\n     Last Name|";
 	num = -1;
-	if (get_ln().length() > 10) {
-		std::cout << contact.last_name.substr(0, 9);
+	if (contact.Contact::get_fn().length() > 10) {
+		std::cout << contact.Contact::get_fn().substr(0, 9);
 		std::cout << ".";
 	}
 	else{
-		while (++num < 10 - (int)contact.last_name.length())
+		while (++num < 10 - (int)contact.Contact::get_ln().length())
 			std::cout << " ";
-		std::cout << contact.last_name;
+		std::cout << contact.Contact::get_ln();
 	}
 	std::cout << "|\n      Nickname|";
 	num = -1;
-	if (contact.nickname.length() > 10) {
-		std::cout << contact.nickname.substr(0, 9);
+	if (contact.Contact::get_nn().length() > 10) {
+		std::cout << contact.Contact::get_nn().substr(0, 9);
 		std::cout << ".";
 	}
 	else{
-		while (++num < 10 - (int)contact.nickname.length())
+		while (++num < 10 - (int)contact.Contact::get_nn().length())
 			std::cout << " ";
-		std::cout << contact.nickname;
+		std::cout << contact.Contact::get_nn();
 	}
 	std::cout << "|\n  Phone Number|";
 	num = -1;
-	if (contact.phone_number.length() > 10) {
-		std::cout << contact.phone_number.substr(0, 9);
+	if (contact.Contact::get_pn().length() > 10) {
+		std::cout << contact.Contact::get_pn().substr(0, 9);
 		std::cout << ".";
 	}
 	else{
-		while (++num < 10 - (int)contact.phone_number.length())
+		while (++num < 10 - (int)contact.Contact::get_pn().length())
 			std::cout << " ";
-		std::cout << contact.phone_number;
+		std::cout << contact.Contact::get_pn();
 	}
 	std::cout << "|\nDarkest Secret|";
 	num = -1;
-	if (contact.secret.length() > 10) {
-		std::cout << contact.secret.substr(0, 9);
+	if (contact.Contact::get_ds().length() > 10) {
+		std::cout << contact.Contact::get_ds().substr(0, 9);
 		std::cout << ".";
 	}
 	else{
-		while (++num < 10 - (int)contact.secret.length())
+		while (++num < 10 - (int)contact.Contact::get_ds().length())
 			std::cout << " ";
-		std::cout << contact.secret;
+		std::cout << contact.Contact::get_ds();
 	}
 	std::cout << "|\n";
 }

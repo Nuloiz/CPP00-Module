@@ -8,7 +8,7 @@ CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98 -fsanitize=address
 SRC := main.cpp book.cpp Contact.cpp PhoneBook.hpp
 
 
-INCLUDES := -I header.hpp PhoneBook.hpp Contact.hpp
+INCLUDES := -I header.hpp
 
 OBJ := $(SRC:%.cpp=$(OBJ)%.o)
 
@@ -16,7 +16,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 		@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
-
 
 clean:
 		rm -r $(OBJ)
