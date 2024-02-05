@@ -3,11 +3,9 @@
 #include "Contact.hpp"
 
 static void	move_contacts(int num, PhoneBook *phonebook){
-	phonebook->PhoneBook::get_contact(num).Contact::get_fn() = phonebook->PhoneBook::get_contact(num).Contact::get_fn();
-	phonebook->PhoneBook::get_contact(num).Contact::get_ln() = phonebook->PhoneBook::get_contact(num).Contact::get_ln();
-	phonebook->PhoneBook::get_contact(num).Contact::get_nn() = phonebook->PhoneBook::get_contact(num).Contact::get_nn();
-	phonebook->PhoneBook::get_contact(num).Contact::get_pn() = phonebook->PhoneBook::get_contact(num).Contact::get_pn();
-	phonebook->PhoneBook::get_contact(num).Contact::get_ds() = phonebook->PhoneBook::get_contact(num).Contact::get_ds();
+	phonebook->PhoneBook::set_contact(num, phonebook->PhoneBook::get_contact(num + 1).Contact::get_fn()\
+	,  phonebook->PhoneBook::get_contact(num + 1).Contact::get_ln(),  phonebook->PhoneBook::get_contact(num + 1).Contact::get_nn()\
+	, phonebook->PhoneBook::get_contact(num + 1).Contact::get_pn(), phonebook->PhoneBook::get_contact(num + 1).Contact::get_ds());
 }
 
 void	add_contact(PhoneBook *phonebook){
