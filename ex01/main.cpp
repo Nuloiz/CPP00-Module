@@ -1,6 +1,7 @@
 #include "header.hpp"
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <sstream>
 
 static void	move_contacts(int num, PhoneBook *phonebook){
 	phonebook->PhoneBook::set_contact(num, phonebook->PhoneBook::get_contact(num + 1).Contact::get_fn()\
@@ -196,6 +197,8 @@ static void	single_contact(Contact contact)
 static void	show_contacts(PhoneBook phonebook){
 	std::string input;
 	int number = 0;
+	std::stringstream s(input);
+	int i;
 	while (number < phonebook.PhoneBook::get_number())
 	{
 		display_contact(phonebook.PhoneBook::get_contact(number), number);
@@ -211,11 +214,12 @@ static void	show_contacts(PhoneBook phonebook){
 			return ;
 		}
 	}
-	if (!input[0] || std::stoi(input) > phonebook.PhoneBook::get_number() || std::stoi(input) <= 0){
+	s >> i;
+	if (!input[0] || i > phonebook.PhoneBook::get_number() || i <= 0){
 		std::cout << "Not in the list\n";
 		return ;
 	}
-	single_contact(phonebook.PhoneBook::get_contact((int) std::stoi(input) - 1));
+	single_contact(phonebook.PhoneBook::get_contact(i - 1));
 }
 
 int main(void) {
