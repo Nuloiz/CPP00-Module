@@ -224,14 +224,16 @@ int main(void) {
 	{
 		std::cout << "MENU:\n";
 		std::getline (std::cin,command);
-		if (command == "EXIT")
-		{
-			std::cout << "Exiting the program\n";
-			return (0);
+		if (std::cin.eof()){
+			std::cout << "EOF ";
+			break;
 		}
+		if (command == "EXIT")
+			break;
 		else if (command == "ADD")
 			add_contact(&phonebook);
 		else if (command == "SEARCH")
 			show_contacts(phonebook);
 	}
+	std::cout << "Exiting the program\n";
 };
