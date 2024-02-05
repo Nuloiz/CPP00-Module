@@ -64,7 +64,7 @@ void	add_contact(PhoneBook *phonebook){
 	}
 	while (pn[++num]){
 		if (!isdigit(pn[num])){
-			std::cout << "Error Fail, Phone Number hast to be only digits. Returned to Menu\n";
+			std::cout << "\nError Fail, Phone Number hast to be only digits. Returned to Menu\n";
 			return ;
 		}
 	}
