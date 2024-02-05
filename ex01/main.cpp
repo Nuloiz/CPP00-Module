@@ -3,11 +3,11 @@
 #include "Contact.hpp"
 
 static void	move_contacts(int num, PhoneBook *phonebook){
-	phonebook->contacts[num].Contact::get_fn() = phonebook->contacts[num + 1].Contact::get_fn();
-	phonebook->contacts[num].Contact::get_ln() = phonebook->contacts[num + 1].Contact::get_ln();
-	phonebook->contacts[num].Contact::get_nn() = phonebook->contacts[num + 1].Contact::get_nn();
-	phonebook->contacts[num].Contact::get_pn() = phonebook->contacts[num + 1].Contact::get_pn();
-	phonebook->contacts[num].Contact::get_ds() = phonebook->contacts[num + 1].Contact::get_ds();
+	phonebook->PhoneBook::get_contact(num).Contact::get_fn() = phonebook->PhoneBook::get_contact(num).Contact::get_fn();
+	phonebook->PhoneBook::get_contact(num).Contact::get_ln() = phonebook->PhoneBook::get_contact(num).Contact::get_ln();
+	phonebook->PhoneBook::get_contact(num).Contact::get_nn() = phonebook->PhoneBook::get_contact(num).Contact::get_nn();
+	phonebook->PhoneBook::get_contact(num).Contact::get_pn() = phonebook->PhoneBook::get_contact(num).Contact::get_pn();
+	phonebook->PhoneBook::get_contact(num).Contact::get_ds() = phonebook->PhoneBook::get_contact(num).Contact::get_ds();
 }
 
 void	add_contact(PhoneBook *phonebook){
@@ -83,16 +83,16 @@ void	add_contact(PhoneBook *phonebook){
 			return ;
 		}
 	}
-	if (phonebook->number == 8){
+	if (phonebook->PhoneBook::get_number() == 8){
 		num = 0;
 		while (num < 7){
 			move_contacts(num, phonebook);
 			num++;
 		}
-		(phonebook->number)--;
+		phonebook->set_number(-1);
 	}
-	phonebook->contacts[phonebook->number].set_values(fn, ln, nn, pn, ds);
-	(phonebook->number)++;
+	phonebook->PhoneBook::set_contact(phonebook->PhoneBook::get_number(), fn, ln, nn, pn, ds);
+	phonebook->set_number(1);
 }
 
 static void display_contact(Contact contact, int index){
@@ -198,9 +198,9 @@ static void	single_contact(Contact contact)
 static void	show_contacts(PhoneBook phonebook){
 	std::string input;
 	int number = 0;
-	while (number < phonebook.number)
+	while (number < phonebook.PhoneBook::get_number())
 	{
-		display_contact(phonebook.contacts[number], number);
+		display_contact(phonebook.PhoneBook::get_contact(number), number);
 		number++;
 	}
 	std::getline (std::cin, input);
@@ -211,17 +211,17 @@ static void	show_contacts(PhoneBook phonebook){
 			return ;
 		}
 	}
-	if (!input[0] || std::stoi(input) > phonebook.number || std::stoi(input) <= 0){
+	if (!input[0] || std::stoi(input) > phonebook.PhoneBook::get_number() || std::stoi(input) <= 0){
 		std::cout << "Not in the list\n";
 		return ;
 	}
-	single_contact(phonebook.contacts[(int) std::stoi(input) - 1]);
+	single_contact(phonebook.PhoneBook::get_contact((int) std::stoi(input) - 1));
 }
 
 int main(void) {
 	PhoneBook phonebook;
 	std::string command;
-	phonebook.number = 0;
+	phonebook.PhoneBook::init_number();
 	while (1)
 	{
 		std::cout << "MENU:\n";

@@ -5,7 +5,7 @@ CC := c++
 #CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98
 CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98 -fsanitize=address
 
-SRC := main.cpp book.cpp Contact.cpp PhoneBook.cpp
+SRC := main.cpp Contact.cpp PhoneBook.cpp
 
 
 INCLUDES := -I header.hpp
