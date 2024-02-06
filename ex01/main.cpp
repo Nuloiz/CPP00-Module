@@ -26,7 +26,7 @@ void	add_contact(PhoneBook *phonebook){
 	}
 	while (fn[++num]){
 		if (!isalpha(fn[num])){
-			std::cout << "\nError Fail, First Name hast to be only letters. Returned to Menu\n";
+			std::cout << "Error Fail, First Name hast to be only letters. Returned to Menu\n";
 			return ;
 		}
 	}
@@ -39,7 +39,7 @@ void	add_contact(PhoneBook *phonebook){
 	num = -1;
 	while (ln[++num]){
 		if (!isalpha(ln[num])){
-			std::cout << "\nError Fail, Last Name hast to be only letters. Returned to Menu\n";
+			std::cout << "Error Fail, Last Name hast to be only letters. Returned to Menu\n";
 			return ;
 		}
 	}
@@ -52,7 +52,7 @@ void	add_contact(PhoneBook *phonebook){
 	num = -1;
 	while (nn[++num]){
 		if (!isascii(nn[num])){
-			std::cout << "\nError Fail, Nickname hast to be only ascii characters. Returned to Menu\n";
+			std::cout << "Error Fail, Nickname hast to be only ascii characters. Returned to Menu\n";
 			return ;
 		}
 	}
@@ -65,7 +65,7 @@ void	add_contact(PhoneBook *phonebook){
 	}
 	while (pn[++num]){
 		if (!isdigit(pn[num])){
-			std::cout << "\nError Fail, Phone Number hast to be only digits. Returned to Menu\n";
+			std::cout << "Error Fail, Phone Number hast to be only digits. Returned to Menu\n";
 			return ;
 		}
 	}
@@ -78,7 +78,7 @@ void	add_contact(PhoneBook *phonebook){
 	num = -1;
 	while (ds[++num]){
 		if (!isascii(ds[num])){
-			std::cout << "\nError Fail, darkest secret hast to be only ascii characters. Returned to Menu\n";
+			std::cout << "Error Fail, darkest secret hast to be only ascii characters. Returned to Menu\n";
 			return ;
 		}
 	}
@@ -197,7 +197,6 @@ static void	single_contact(Contact contact)
 static void	show_contacts(PhoneBook phonebook){
 	std::string input;
 	int number = 0;
-	std::stringstream s(input);
 	int i;
 	if (phonebook.PhoneBook::get_number() == 0){
 		std::cout << "Phonebook is empty, returning to Menu\n";
@@ -214,12 +213,13 @@ static void	show_contacts(PhoneBook phonebook){
 	number = -1;
 	while (input[++number]){
 		if (!isdigit(input[number])){
-			std::cout << "Not a number\n";
+			std::cout << "Negative or not a number at all\n";
 			return ;
 		}
 	}
+	std::stringstream s(input);
 	s >> i;
-	if (!input[0] || i > phonebook.PhoneBook::get_number() || i <= 0){
+	if (!input[0] || i > phonebook.PhoneBook::get_number()){
 		std::cout << "Not in the list\n";
 		return ;
 	}
