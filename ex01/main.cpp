@@ -30,7 +30,7 @@ void	add_contact(PhoneBook *phonebook){
 			return ;
 		}
 	}
-	std::cout << "\nLast Name: ";
+	std::cout << "Last Name: ";
 	std::getline (std::cin, ln);
 	if (!ln[0]){
 		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
