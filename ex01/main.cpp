@@ -18,10 +18,10 @@ void	add_contact(PhoneBook *phonebook){
 	std::string	ds;
 	std::string input;
 
-	std::cout << "First Name:";
+	std::cout << "First Name: ";
 	std::getline (std::cin, fn);
 	if (!fn[0]){
-		std::cout << "\nError Fail, Field can not be empty. Returned to Menu\n";
+		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
 	}
 	while (fn[++num]){
@@ -30,10 +30,10 @@ void	add_contact(PhoneBook *phonebook){
 			return ;
 		}
 	}
-	std::cout << "\nLast Name:";
+	std::cout << "\nLast Name: ";
 	std::getline (std::cin, ln);
 	if (!ln[0]){
-		std::cout << "\nError Fail, Field can not be empty. Returned to Menu\n";
+		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
 	}
 	num = -1;
@@ -43,10 +43,10 @@ void	add_contact(PhoneBook *phonebook){
 			return ;
 		}
 	}
-	std::cout << "Nickname:";
+	std::cout << "Nickname: ";
 	std::getline (std::cin, nn);
 	if (!nn[0]){
-		std::cout << "\nError Fail, Field can not be empty. Returned to Menu\n";
+		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
 	}
 	num = -1;
@@ -56,11 +56,11 @@ void	add_contact(PhoneBook *phonebook){
 			return ;
 		}
 	}
-	std::cout << "Phone-Number:";
+	std::cout << "Phone-Number: ";
 	std::getline (std::cin, pn);
 	num = -1;
 	if (!pn[0]) {
-		std::cout << "\nError Fail, Field can not be empty. Returned to Menu\n";
+		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
 	}
 	while (pn[++num]){
@@ -69,10 +69,10 @@ void	add_contact(PhoneBook *phonebook){
 			return ;
 		}
 	}
-	std::cout << "Darkest Secret:";
+	std::cout << "Darkest Secret: ";
 	std::getline (std::cin, ds);
 	if (!ds[0]){
-		std::cout << "\nError Fail, Field can not be empty. Returned to Menu\n";
+		std::cout << "Error Fail, Field can not be empty. Returned to Menu\n";
 		return ;
 	}
 	num = -1;
@@ -199,6 +199,10 @@ static void	show_contacts(PhoneBook phonebook){
 	int number = 0;
 	std::stringstream s(input);
 	int i;
+	if (phonebook.PhoneBook::get_number() == 0){
+		std::cout << "Phonebook is empty, returning to Menu\n";
+		return ;
+	}
 	while (number < phonebook.PhoneBook::get_number())
 	{
 		display_contact(phonebook.PhoneBook::get_contact(number), number);
@@ -231,7 +235,7 @@ int main(void) {
 		std::cout << "MENU:\n";
 		std::getline (std::cin,command);
 		if (std::cin.eof()){
-			std::cout << "EOF ";
+			std::cout << "EOF, ";
 			break;
 		}
 		if (command == "EXIT")
