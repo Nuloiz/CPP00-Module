@@ -25,7 +25,7 @@ void	add_contact(PhoneBook *phonebook){
 		return ;
 	}
 	while (fn[++num]){
-		if (!isalpha(fn[num])){
+		if (!isalpha(fn[num] && fn[num] != ' ')){
 			std::cout << "Error Fail, First Name hast to be only letters. Returned to Menu\n";
 			return ;
 		}
@@ -38,7 +38,7 @@ void	add_contact(PhoneBook *phonebook){
 	}
 	num = -1;
 	while (ln[++num]){
-		if (!isalpha(ln[num])){
+		if (!isalpha(ln[num] && ln[num] != ' ')){
 			std::cout << "Error Fail, Last Name hast to be only letters. Returned to Menu\n";
 			return ;
 		}
